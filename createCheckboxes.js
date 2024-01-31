@@ -204,8 +204,8 @@ let data = {
 };
 
 function createCircuitsCheckboxes() {
-    const contenedor = $('.circuits');
-    const columna = $('<div>', {
+    const container = $('.circuits');
+    const column = $('<div>', {
         class: 'col-md-12',
         id: 'circuits'
     });
@@ -224,20 +224,20 @@ function createCircuitsCheckboxes() {
             class: `form-check-label`
         });
         div.append(checkbox, label, '<br>');
-        columna.append(div)
-        contenedor.append(columna);
+        column.append(div)
+        container.append(column);
     });
 }
 
 function createJurisdictionsCheckboxes() {
-    const contenedor = $('.jurisdictions');
-    const elementosPorColumna = Math.ceil(data.states.length / 3);
+    const container = $('.jurisdictions');
+    const elementsPerColumn = Math.ceil(data.states.length / 3);
     for (let i = 0; i < 3; i++) {
         const columna = $('<div>', {
             class: 'col-md-4',
             id: 'jurisdictions'
         });
-        for (let j = i * elementosPorColumna; j < (i + 1) * elementosPorColumna && j < data.states.length; j++) {
+        for (let j = i * elementsPerColumn; j < (i + 1) * elementsPerColumn && j < data.states.length; j++) {
             const div = $('<div>', {
                 class: `${data.states[j].name.toLowerCase()}`,
                 id: 'form-check'
@@ -256,7 +256,7 @@ function createJurisdictionsCheckboxes() {
             div.append(checkbox, label, '<br>');
             columna.append(div)
         }
-        contenedor.append(columna);
+        container.append(columna);
     }
 }
 
