@@ -72,7 +72,7 @@ document.addEventListener('jurisdictions-selected', function (event) {
 function addToList(selectedJurisdictions) {
     listUl.empty();
     selectedJurisdictions.forEach(function (jurisdiction) {
-        const nuevoElemento = $('<li>', { text: jurisdiction });
-        listUl.append(nuevoElemento);
+        const newElement = $('<li>', { text: jurisdiction });
+        listUl.append(newElement);
     });
 }
